@@ -28,6 +28,34 @@
                     <div class="age-badge">28</div>
                 </div>
 
+                <!-- Carrossel de Imagens -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slides">
+                            <div class="slide active">
+                                <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image">
+                            </div>
+                        </div>
+                        
+                        <!-- Navegação do Carrossel -->
+                        <button class="carousel-btn prev-btn" onclick="changeSlide(-1)"></button>
+                        <button class="carousel-btn next-btn" onclick="changeSlide(1)"></button>
+                        
+                        <!-- Indicadores -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" onclick="currentSlide(1)"></span>
+                            <span class="indicator" onclick="currentSlide(2)"></span>
+                            <span class="indicator" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="name-section">
                     <h3 class="name">KAYANE MULLER</h3>
                     <div class="underline"></div>
@@ -80,6 +108,44 @@
     </div>
 
     <script>
+        // Variáveis do carrossel
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Função para trocar slide
+        function changeSlide(direction) {
+            slides[currentSlideIndex].classList.remove('active');
+            indicators[currentSlideIndex].classList.remove('active');
+            
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = slides.length - 1;
+            }
+            
+            slides[currentSlideIndex].classList.add('active');
+            indicators[currentSlideIndex].classList.add('active');
+        }
+
+        // Função para ir para slide específico
+        function currentSlide(n) {
+            slides[currentSlideIndex].classList.remove('active');
+            indicators[currentSlideIndex].classList.remove('active');
+            
+            currentSlideIndex = n - 1;
+            
+            slides[currentSlideIndex].classList.add('active');
+            indicators[currentSlideIndex].classList.add('active');
+        }
+
+        // Auto-play do carrossel (opcional)
+        setInterval(() => {
+            changeSlide(1);
+        }, 4000);
+
         // Botão Limpar mensagem
         document.getElementById('clearBtn').addEventListener('click', function() {
             document.getElementById('messageText').value = '';
