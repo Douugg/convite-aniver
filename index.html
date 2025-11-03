@@ -1,9 +1,9 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anivers√°rio da Kayane - 28 Anos</title>
+    <title>Anivers·rio da Kayane - 28 Anos</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -17,14 +17,14 @@
 
         <header class="header">
             <div class="beer-mug"></div>
-            <h1 class="celebration-text">√â FESTA!</h1>
+            <h1 class="celebration-text">… FESTA!</h1>
             <div class="beer-mug"></div>
         </header>
 
         <main class="main-content">
             <div class="birthday-card">
                 <div class="card-header">
-                    <h2 class="birthday-title">ANIVERS√ÅRIO</h2>
+                    <h2 class="birthday-title">ANIVERS¡RIO</h2>
                     <div class="age-badge">28</div>
                 </div>
 
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         
-                        <!-- Navega√ß√£o do Carrossel -->
+                        <!-- NavegaÁ„o do Carrossel -->
                         <button class="carousel-btn prev-btn" onclick="changeSlide(-1)"></button>
                         <button class="carousel-btn next-btn" onclick="changeSlide(1)"></button>
                         
@@ -79,8 +79,8 @@
                     <div class="detail-item">
                         <span class="icon"></span>
                         <div class="detail-text">
-                            <strong><a href="https://share.google/dz7g8eiVoem5IjJEG" target="_blank" style="color: #ff6b35; text-decoration: none;">Balburdia Cervejaria</a></strong>
-                            <p>Florian√≥polis, SC</p>
+                            <strong><a href="https://www.google.com/search?client=firefox-b-d&channel=entpr&q=balburdia+&lqi=CgliYWxidXJkaWFI5YCH2M67gIAIWhUQABgAIgliYWxidXJkaWEqBAgCEACSAQxjb2NrdGFpbF9iYXKqAUAKDS9nLzExd21wajNqMzUQATIeEAEiGvkOBADyYWyv-T9Wky1XTDVsmcx2OxVOKgTSMg0QAiIJYmFsYnVyZGlh#rlimm=15046616327529831212" target="_blank" style="color: #ff6b35; text-decoration: none;">Balburdia Cervejaria</a></strong>
+                            <p>FlorianÛpolis, SC</p>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
                     </div>
                 </div>
 
-                <!-- Se√ß√£o de Mensagem -->
+                <!-- SeÁ„o de Mensagem -->
                 <div class="message-section">
                     <h4 class="message-title">Escreva uma mensagem para Kayane </h4>
                     <div class="message-form">
@@ -122,14 +122,14 @@
     </div>
 
     <script>
-        // Vari√°veis do carrossel
+        // Vari·veis do carrossel
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const indicators = document.querySelectorAll('.indicator');
         const images = ['images/kayane1.jpeg', 'images/kayane2.jpeg', 'images/kayane3.jpeg', 'images/kayane4.jpeg'];
         let currentModalIndex = 0;
 
-        // Fun√ß√£o para trocar slide
+        // FunÁ„o para trocar slide
         function changeSlide(direction) {
             slides[currentSlideIndex].classList.remove('active');
             indicators[currentSlideIndex].classList.remove('active');
@@ -146,7 +146,7 @@
             indicators[currentSlideIndex].classList.add('active');
         }
 
-        // Fun√ß√£o para ir para slide espec√≠fico
+        // FunÁ„o para ir para slide especÌfico
         function currentSlide(n) {
             slides[currentSlideIndex].classList.remove('active');
             indicators[currentSlideIndex].classList.remove('active');
@@ -157,7 +157,7 @@
             indicators[currentSlideIndex].classList.add('active');
         }
 
-        // Fun√ß√£o para abrir modal
+        // FunÁ„o para abrir modal
         function openModal(imageIndex) {
             currentModalIndex = imageIndex;
             const modal = document.getElementById('imageModal');
@@ -167,12 +167,12 @@
             modalImg.src = images[imageIndex];
         }
 
-        // Fun√ß√£o para fechar modal
+        // FunÁ„o para fechar modal
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
 
-        // Navega√ß√£o no modal
+        // NavegaÁ„o no modal
         function modalPrevious() {
             currentModalIndex = currentModalIndex > 0 ? currentModalIndex - 1 : images.length - 1;
             document.getElementById('modalImage').src = images[currentModalIndex];
@@ -188,12 +188,12 @@
             changeSlide(1);
         }, 5000);
 
-        // Bot√£o Limpar mensagem
+        // Bot„o Limpar mensagem
         document.getElementById('clearBtn').addEventListener('click', function() {
             document.getElementById('messageText').value = '';
         });
 
-        // Bot√£o EU VOU!! - Confirma√ß√£o de presen√ßa
+        // Bot„o EU VOU!! - ConfirmaÁ„o de presenÁa
         document.getElementById('confirmBtn').addEventListener('click', function() {
             const fullName = document.getElementById('fullName').value.trim();
             
@@ -208,10 +208,10 @@
             
             window.open(whatsappURL, '_blank');
             document.getElementById('fullName').value = '';
-            alert('Obrigada por confirmar presen√ßa! ');
+            alert('Obrigada por confirmar presenÁa! ');
         });
 
-        // Bot√£o Enviar mensagem
+        // Bot„o Enviar mensagem
         document.getElementById('sendBtn').addEventListener('click', function() {
             const message = document.getElementById('messageText').value.trim();
             
@@ -221,7 +221,7 @@
             }
 
             const whatsappNumber = '5548984555494';
-            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Anivers√°rio 28 anos): ' + message);
+            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Anivers·rio 28 anos): ' + message);
             const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
             
             window.open(whatsappURL, '_blank');
