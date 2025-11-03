@@ -33,13 +33,16 @@
                     <div class="carousel">
                         <div class="carousel-slides">
                             <div class="slide active">
-                                <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image">
+                                <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image" onclick="openModal(0)">
                             </div>
                             <div class="slide">
-                                <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image">
+                                <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image" onclick="openModal(1)">
                             </div>
                             <div class="slide">
-                                <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image">
+                                <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image" onclick="openModal(2)">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane4.jpeg" alt="Kayane - Foto 4" class="carousel-image" onclick="openModal(3)">
                             </div>
                         </div>
                         
@@ -52,7 +55,18 @@
                             <span class="indicator active" onclick="currentSlide(1)"></span>
                             <span class="indicator" onclick="currentSlide(2)"></span>
                             <span class="indicator" onclick="currentSlide(3)"></span>
+                            <span class="indicator" onclick="currentSlide(4)"></span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Modal para exibir imagem em tamanho completo -->
+                <div id="imageModal" class="modal" onclick="closeModal()">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                    <div class="modal-nav">
+                        <button class="modal-btn prev" onclick="event.stopPropagation(); modalPrevious()">&lt;</button>
+                        <button class="modal-btn next" onclick="event.stopPropagation(); modalNext()">&gt;</button>
                     </div>
                 </div>
 
@@ -112,6 +126,8 @@
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const indicators = document.querySelectorAll('.indicator');
+        const images = ['images/kayane1.jpeg', 'images/kayane2.jpeg', 'images/kayane3.jpeg', 'images/kayane4.jpeg'];
+        let currentModalIndex = 0;
 
         // Função para trocar slide
         function changeSlide(direction) {
@@ -141,10 +157,36 @@
             indicators[currentSlideIndex].classList.add('active');
         }
 
-        // Auto-play do carrossel (opcional)
+        // Função para abrir modal
+        function openModal(imageIndex) {
+            currentModalIndex = imageIndex;
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = 'block';
+            modalImg.src = images[imageIndex];
+        }
+
+        // Função para fechar modal
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Navegação no modal
+        function modalPrevious() {
+            currentModalIndex = currentModalIndex > 0 ? currentModalIndex - 1 : images.length - 1;
+            document.getElementById('modalImage').src = images[currentModalIndex];
+        }
+
+        function modalNext() {
+            currentModalIndex = currentModalIndex < images.length - 1 ? currentModalIndex + 1 : 0;
+            document.getElementById('modalImage').src = images[currentModalIndex];
+        }
+
+        // Auto-play do carrossel
         setInterval(() => {
             changeSlide(1);
-        }, 4000);
+        }, 5000);
 
         // Botão Limpar mensagem
         document.getElementById('clearBtn').addEventListener('click', function() {
