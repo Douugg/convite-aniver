@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário da Kayane - 28 Anos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+
+        <header class="header">
+            <div class="beer-mug"></div>
+            <h1 class="celebration-text">É FESTA!</h1>
+            <div class="beer-mug"></div>
+        </header>
+
+        <main class="main-content">
+            <div class="birthday-card">
+                <div class="card-header">
+                    <h2 class="birthday-title">ANIVERSÁRIO</h2>
+                    <div class="age-badge">28</div>
+                </div>
+
+                <!-- Carrossel de Imagens -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slides">
+                            <div class="slide active">
+                                <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image" onclick="openModal(0)">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image" onclick="openModal(1)">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image" onclick="openModal(2)">
+                            </div>
+                            <div class="slide">
+                                <img src="images/kayane4.jpeg" alt="Kayane - Foto 4" class="carousel-image" onclick="openModal(3)">
+                            </div>
+                        </div>
+                        
+                        <!-- Navegação do Carrossel -->
+                        <button class="carousel-btn prev-btn" onclick="changeSlide(-1)"></button>
+                        <button class="carousel-btn next-btn" onclick="changeSlide(1)"></button>
+                        
+                        <!-- Indicadores -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" onclick="currentSlide(1)"></span>
+                            <span class="indicator" onclick="currentSlide(2)"></span>
+                            <span class="indicator" onclick="currentSlide(3)"></span>
+                            <span class="indicator" onclick="currentSlide(4)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para exibir imagem em tamanho completo -->
+                <div id="imageModal" class="modal" onclick="closeModal()">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                    <div class="modal-nav">
+                        <button class="modal-btn prev" onclick="event.stopPropagation(); modalPrevious()">&lt;</button>
+                        <button class="modal-btn next" onclick="event.stopPropagation(); modalNext()">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="name-section">
+                    <h3 class="name">KAYANE MULLER</h3>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="details-section">
+                    <div class="detail-item">
+                        <span class="icon"></span>
+                        <div class="detail-text">
+                            <strong><a href="https://share.google/dz7g8eiVoem5IjJEG" target="_blank" style="color: #ff6b35; text-decoration: none;">Balburdia Cervejaria</a></strong>
+                            <p>Florianópolis, SC</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="icon"></span>
+                        <div class="detail-text">
+                            <strong>19:00</strong>
+                            <p>04/11/2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <div class="rsvp-form">
+                        <input type="text" id="fullName" placeholder="Digite seu nome completo" class="name-input">
+                        <button type="button" id="confirmBtn" class="confirm-btn">EU VOU!! </button>
+                    </div>
+                </div>
+
+                <!-- Seção de Mensagem -->
+                <div class="message-section">
+                    <h4 class="message-title">Escreva uma mensagem para Kayane </h4>
+                    <div class="message-form">
+                        <textarea id="messageText" placeholder="Digite sua mensagem carinhosa para a Kayane..." rows="4"></textarea>
+                        <div class="form-buttons">
+                            <button type="button" id="clearBtn" class="clear-btn">Limpar</button>
+                            <button type="button" id="sendBtn" class="send-btn">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="beer-icons">
+                      
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Variáveis do carrossel
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const images = ['images/kayane1.jpeg', 'images/kayane2.jpeg', 'images/kayane3.jpeg', 'images/kayane4.jpeg'];
+        let currentModalIndex = 0;
+
+        // Função para trocar slide
+        function changeSlide(direction) {
+            slides[currentSlideIndex].classList.remove('active');
+            indicators[currentSlideIndex].classList.remove('active');
+            
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = slides.length - 1;
+            }
+            
+            slides[currentSlideIndex].classList.add('active');
+            indicators[currentSlideIndex].classList.add('active');
+        }
+
+        // Função para ir para slide específico
+        function currentSlide(n) {
+            slides[currentSlideIndex].classList.remove('active');
+            indicators[currentSlideIndex].classList.remove('active');
+            
+            currentSlideIndex = n - 1;
+            
+            slides[currentSlideIndex].classList.add('active');
+            indicators[currentSlideIndex].classList.add('active');
+        }
+
+        // Função para abrir modal
+        function openModal(imageIndex) {
+            currentModalIndex = imageIndex;
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = 'block';
+            modalImg.src = images[imageIndex];
+        }
+
+        // Função para fechar modal
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Navegação no modal
+        function modalPrevious() {
+            currentModalIndex = currentModalIndex > 0 ? currentModalIndex - 1 : images.length - 1;
+            document.getElementById('modalImage').src = images[currentModalIndex];
+        }
+
+        function modalNext() {
+            currentModalIndex = currentModalIndex < images.length - 1 ? currentModalIndex + 1 : 0;
+            document.getElementById('modalImage').src = images[currentModalIndex];
+        }
+
+        // Auto-play do carrossel
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Botão Limpar mensagem
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('messageText').value = '';
+        });
+
+        // Botão EU VOU!! - Confirmação de presença
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            const fullName = document.getElementById('fullName').value.trim();
+            
+            if (fullName === '') {
+                alert('Por favor, digite seu nome completo!');
+                return;
+            }
+
+            const whatsappNumber = '5548984555494';
+            const encodedMessage = encodeURIComponent('Lista de convidados Aniver da Kayane: ' + fullName);
+            const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
+            
+            window.open(whatsappURL, '_blank');
+            document.getElementById('fullName').value = '';
+            alert('Obrigada por confirmar presença! ');
+        });
+
+        // Botão Enviar mensagem
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            const message = document.getElementById('messageText').value.trim();
+            
+            if (message === '') {
+                alert('Por favor, escreva uma mensagem antes de enviar!');
+                return;
+            }
+
+            const whatsappNumber = '5548984555494';
+            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Aniversário 28 anos): ' + message);
+            const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>

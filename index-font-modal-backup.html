@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Aniversário da Kayane - 28 Anos </title>
     <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="modern-container">
@@ -66,20 +66,28 @@
                             </div>
                         </div>
                         
-                        <!-- Indicadores com Setas -->
-                        <div class="arrow-indicators">
-                            <button class="arrow-btn active" onclick="currentSlide(1)">→</button>
-                            <button class="arrow-btn" onclick="currentSlide(2)">→</button>
-                            <button class="arrow-btn" onclick="currentSlide(3)">→</button>
-                            <button class="arrow-btn" onclick="currentSlide(4)">→</button>
+                        <!-- Navegação Moderna -->
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                            <span></span>
+                        </button>
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                            <span></span>
+                        </button>
+                        
+                        <!-- Indicadores Modernos -->
+                        <div class="modern-indicators">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Nome da Aniversariante -->
                 <div class="name-modern">
-                    <h3 class="name-title">KAYANE MULLER BRUM</h3>
-                    <div class="name-decoration">✨</div>
+                    <h3 class="name-title">KAYANE MULLER</h3>
+                    <div class="name-decoration"></div>
                 </div>
 
                 <!-- Informações do Evento -->
@@ -92,11 +100,11 @@
                         </div>
                     </div>
 
-                    <div class="info-card datetime" onclick="openDateTimeModal()">
+                    <div class="info-card datetime">
                         <div class="info-icon"></div>
                         <div class="info-content">
-                            <h4 style="cursor: pointer;">19:00hrs</h4>
-                            <p style="cursor: pointer;">04 de Novembro, 2025</p>
+                            <h4>19:00</h4>
+                            <p>04 de Novembro, 2025</p>
                         </div>
                     </div>
                 </div>
@@ -145,52 +153,6 @@
             </div>
         </div>
 
-        <!-- Modal de Data e Hora -->
-        <div id="dateTimeModal" class="date-modal" onclick="closeDateTimeModal()">
-            <div class="date-modal-content" onclick="event.stopPropagation()">
-                <span class="date-modal-close" onclick="closeDateTimeModal()">&times;</span>
-                <div class="date-modal-header">
-                    <h3> Detalhes da Festa </h3>
-                </div>
-                <div class="date-modal-body">
-                    <div class="date-info">
-                        <div class="date-item">
-                            <span class="date-icon"></span>
-                            <div class="date-details">
-                                <h4>Data</h4>
-                                <p>04 de Novembro de 2025</p>
-                                <small>Terça-feira</small>
-                            </div>
-                        </div>
-                        
-                        <div class="date-item">
-                            <span class="date-icon"></span>
-                            <div class="date-details">
-                                <h4>Horário</h4>
-                                <p>19:00hrs</p>
-                            </div>
-                        </div>
-                        
-                        <div class="date-item">
-                            <span class="date-icon"></span>
-                            <div class="date-details">
-                                <h4>Local</h4>
-                                <p>Rooftop da Balburdia</p>
-                                <small>Ambiente ao ar livre</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="date-message">
-                        <div class="message-bubble">
-                            <p>"Aniversário da Kay, te espero lá!! "</p>
-                            <span class="message-signature">Com carinho </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Footer Divertido -->
         <footer class="modern-footer">
             <div class="footer-content">
@@ -203,14 +165,14 @@
         // Variáveis globais
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
-        const arrows = document.querySelectorAll('.arrow-btn');
+        const dots = document.querySelectorAll('.dot');
         const images = ['images/kayane1.jpeg', 'images/kayane2.jpeg', 'images/kayane3.jpeg', 'images/kayane4.jpeg'];
         let currentModalIndex = 0;
 
         // Função para trocar slide
         function changeSlide(direction) {
             slides[currentSlideIndex].classList.remove('active');
-            arrows[currentSlideIndex].classList.remove('active');
+            dots[currentSlideIndex].classList.remove('active');
             
             currentSlideIndex += direction;
             
@@ -221,21 +183,21 @@
             }
             
             slides[currentSlideIndex].classList.add('active');
-            arrows[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
         }
 
         // Função para slide específico
         function currentSlide(n) {
             slides[currentSlideIndex].classList.remove('active');
-            arrows[currentSlideIndex].classList.remove('active');
+            dots[currentSlideIndex].classList.remove('active');
             
             currentSlideIndex = n - 1;
             
             slides[currentSlideIndex].classList.add('active');
-            arrows[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
         }
 
-        // Modal de imagens
+        // Modal functions
         function openModal(imageIndex) {
             currentModalIndex = imageIndex;
             const modal = document.getElementById('imageModal');
@@ -257,15 +219,6 @@
         function modalNext() {
             currentModalIndex = currentModalIndex < images.length - 1 ? currentModalIndex + 1 : 0;
             document.getElementById('modalImage').src = images[currentModalIndex];
-        }
-
-        // Modal de data e hora
-        function openDateTimeModal() {
-            document.getElementById('dateTimeModal').style.display = 'flex';
-        }
-
-        function closeDateTimeModal() {
-            document.getElementById('dateTimeModal').style.display = 'none';
         }
 
         // Auto-play

@@ -1,0 +1,945 @@
+/* Reset e configura√ß√µes base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, 
+        #ff6b6b 0%, 
+        #feca57 25%, 
+        #48dbfb 50%, 
+        #ff9ff3 75%, 
+        #54a0ff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Anima√ß√£o de confete */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f39c12;
+    animation: confetti-fall 3s linear infinite;
+}
+
+.confetti:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    background: #e74c3c;
+}
+
+.confetti:nth-child(2) {
+    left: 25%;
+    animation-delay: 0.5s;
+    background: #3498db;
+}
+
+.confetti:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+    background: #2ecc71;
+}
+
+.confetti:nth-child(4) {
+    left: 75%;
+    animation-delay: 1.5s;
+    background: #9b59b6;
+}
+
+.confetti:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+    background: #f1c40f;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    animation: bounce-in 1s ease-out;
+}
+
+.beer-mug {
+    font-size: 3rem;
+    margin: 0 20px;
+    animation: wobble 2s ease-in-out infinite;
+}
+
+.celebration-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px #2c3e50, 6px 6px 10px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+}
+
+/* Card principal */
+.birthday-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border: 3px solid #fff;
+    animation: slide-up 1s ease-out 0.3s both;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.birthday-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    color: #e67e22;
+    text-shadow: 2px 2px 0px #d35400;
+}
+
+.age-badge {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+/* Se√ß√£o do nome */
+.name-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px #bdc3c7;
+}
+
+.underline {
+    width: 200px;
+    height: 5px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb);
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+/* Detalhes do evento */
+.details-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    background: rgba(52, 152, 219, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #3498db;
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+}
+
+.detail-text strong {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detail-text p {
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+/* Bot√£o de call-to-action */
+.cta-section {
+    text-align: center;
+}
+
+.party-button {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.party-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.party-button:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    animation: slide-up 1s ease-out 0.6s both;
+}
+
+.beer-icons {
+    font-size: 2rem;
+    letter-spacing: 10px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Anima√ß√µes */
+@keyframes bounce-in {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    }
+    100% {
+        box-shadow: 0 10px 30px rgba(254, 202, 87, 0.3), 0 0 30px rgba(255, 107, 107, 0.5);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .celebration-text {
+        font-size: 2.5rem;
+    }
+    
+    .beer-mug {
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+    
+    .birthday-card {
+        padding: 20px;
+    }
+    
+    .birthday-title {
+        font-size: 2rem;
+    }
+    
+    .name {
+        font-size: 2.2rem;
+    }
+    
+    .age-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .details-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .detail-item {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .party-button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .celebration-text {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .birthday-title {
+        font-size: 1.5rem;
+    }
+    
+    .name {
+        font-size: 1.8rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Efeitos extras para tornar mais divertido */
+.birthday-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Adicionando mais personalidade cervejeira */
+.birthday-card::before {
+    content: "üç∫üéâüç∫";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* SeÁ„o de Mensagem */
+.message-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.message-title {
+    color: #ff6b35;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.message-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #ff6b35;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.message-form textarea:focus {
+    outline: none;
+    border-color: #e55a2b;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.clear-btn, .send-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.clear-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.send-btn {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white;
+    position: relative;
+}
+
+.send-btn:hover {
+    background: linear-gradient(45deg, #22c55e, #0f766e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.send-btn::after {
+    content: "";
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .message-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .clear-btn, .send-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Formul·rio de ConfirmaÁ„o de PresenÁa */
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.name-input {
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #ff6b35;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #e55a2b;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+    transform: scale(1.02);
+}
+
+.name-input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.confirm-btn {
+    background: linear-gradient(45deg, #ff6b35, #ffa726);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 30px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.confirm-btn:hover {
+    background: linear-gradient(45deg, #e55a2b, #ff9800);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+}
+
+.confirm-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.confirm-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.confirm-btn:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    .rsvp-form {
+        padding: 0 20px;
+    }
+    
+    .name-input {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .confirm-btn {
+        font-size: 16px;
+        padding: 15px 30px;
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* ========================================
+   CARROSSEL DE IMAGENS
+======================================== */
+
+.carousel-container {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    background: white;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Botıes de navegaÁ„o */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 53, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 107, 53, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #ff6b35;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #ff6b35;
+    opacity: 0.7;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 280px;
+    }
+    
+    .carousel-slides {
+        height: 220px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* AnimaÁ„o de entrada para o carrossel */
+.carousel-container {
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito hover no carrossel inteiro */
+.carousel:hover {
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   MODAL PARA IMAGENS
+======================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(255, 107, 53, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #ff6b35;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal-nav {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.modal-btn {
+    background: rgba(255, 107, 53, 0.8);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.modal-btn:hover {
+    background: rgba(255, 107, 53, 1);
+    transform: scale(1.1);
+}
+
+/* AtualizaÁ„o dos botıes do carrossel - MENORES */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 53, 0.7);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 107, 53, 0.9);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev-btn {
+    left: 8px;
+}
+
+.next-btn {
+    right: 8px;
+}
+
+/* Cursor pointer para imagens clic·veis */
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsivo para mobile - botıes ainda menores */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 280px;
+    }
+    
+    .carousel-slides {
+        height: 220px;
+    }
+    
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+
+    .modal-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+    
+    .close {
+        font-size: 30px;
+        right: 20px;
+    }
+}
+
+/* AnimaÁ„o de zoom ao abrir modal */
+@keyframes modalZoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+.modal-content {
+    animation-name: modalZoom;
+    animation-duration: 0.3s;
+}
