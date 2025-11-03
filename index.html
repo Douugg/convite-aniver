@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniversário do Kayne - 28 Anos</title>
+    <title>Aniversário da Kayane - 28 Anos</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,11 +14,11 @@
         <div class="confetti"></div>
         <div class="confetti"></div>
         <div class="confetti"></div>
-        
+
         <header class="header">
-            <div class="beer-mug">🍺</div>
+            <div class="beer-mug"></div>
             <h1 class="celebration-text">É FESTA!</h1>
-            <div class="beer-mug">🍺</div>
+            <div class="beer-mug"></div>
         </header>
 
         <main class="main-content">
@@ -27,43 +27,76 @@
                     <h2 class="birthday-title">ANIVERSÁRIO</h2>
                     <div class="age-badge">28</div>
                 </div>
-                
+
                 <div class="name-section">
-                    <h3 class="name">KAYNE MULLER</h3>
+                    <h3 class="name">KAYANE MULLER</h3>
                     <div class="underline"></div>
                 </div>
 
                 <div class="details-section">
                     <div class="detail-item">
-                        <span class="icon">📍</span>
+                        <span class="icon"></span>
                         <div class="detail-text">
                             <strong><a href="https://share.google.com/5PTpbCr2RRW4XA4Vg" target="_blank" style="color: #ff6b35; text-decoration: none;">Balburdia Cervejaria</a></strong>
                             <p>Florianópolis, SC</p>
                         </div>
                     </div>
-                    
+
                     <div class="detail-item">
-                        <span class="icon">🎉</span>
+                        <span class="icon"></span>
                         <div class="detail-text">
-                            <strong>Vamos Balançar!</strong>
-                            <p>Diversão garantida</p>
+                            <strong>19:00</strong>
+                            <p>04/11/2025</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="cta-section">
                     <button class="party-button">
-                        <span>BORA FESTEJAR! 🎊</span>
+                        <span>BORA FESTEJAR! </span>
                     </button>
+                </div>
+
+                <!-- Seção de Mensagem -->
+                <div class="message-section">
+                    <h4 class="message-title">Escreva uma mensagem para Kayane </h4>
+                    <div class="message-form">
+                        <textarea id="messageText" placeholder="Digite sua mensagem carinhosa para a Kayane..." rows="4"></textarea>
+                        <div class="form-buttons">
+                            <button type="button" id="clearBtn" class="clear-btn">Limpar</button>
+                            <button type="button" id="sendBtn" class="send-btn">Enviar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
 
         <footer class="footer">
             <div class="beer-icons">
-                🍻 🎂 🍻 🎈 🍻 🎵 🍻
+                      
             </div>
         </footer>
     </div>
+
+    <script>
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('messageText').value = '';
+        });
+
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            const message = document.getElementById('messageText').value.trim();
+            
+            if (message === '') {
+                alert('Por favor, escreva uma mensagem antes de enviar!');
+                return;
+            }
+
+            const whatsappNumber = '5548984555494';
+            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Aniversário 28 anos): ' + message);
+            const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 </body>
 </html>

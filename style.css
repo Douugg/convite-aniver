@@ -402,3 +402,103 @@ body {
     font-size: 1.2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+/* Seção de Mensagem */
+.message-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.message-title {
+    color: #ff6b35;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.message-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #ff6b35;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.message-form textarea:focus {
+    outline: none;
+    border-color: #e55a2b;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.clear-btn, .send-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.clear-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.send-btn {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white;
+    position: relative;
+}
+
+.send-btn:hover {
+    background: linear-gradient(45deg, #22c55e, #0f766e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.send-btn::after {
+    content: "";
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .message-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .clear-btn, .send-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
