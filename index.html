@@ -1,138 +1,178 @@
-<!DOCTYPE html>
+Ôªø<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anivers·rio da Kayane - 28 Anos</title>
+    <title> Anivers√°rio da Kayane - 28 Anos </title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
+    <div class="modern-container">
+        <!-- Particles Background -->
+        <div class="particles"></div>
+        <div class="particles"></div>
+        <div class="particles"></div>
+        <div class="particles"></div>
+        <div class="particles"></div>
 
-        <header class="header">
-            <div class="beer-mug"></div>
-            <h1 class="celebration-text">… FESTA!</h1>
-            <div class="beer-mug"></div>
+        <!-- Header Moderno -->
+        <header class="modern-header">
+            <div class="celebration-badge">
+                <span class="party-emoji"></span>
+                <h1 class="celebration-text">√â FESTA!</h1>
+                <span class="party-emoji"></span>
+            </div>
         </header>
 
-        <main class="main-content">
-            <div class="birthday-card">
-                <div class="card-header">
-                    <h2 class="birthday-title">ANIVERS¡RIO</h2>
-                    <div class="age-badge">28</div>
+        <!-- Card Principal -->
+        <main class="main-card">
+            <div class="birthday-card-modern">
+                
+                <!-- T√≠tulo Centralizado -->
+                <div class="title-section">
+                    <div class="birthday-badge">
+                        <h2 class="birthday-title">ANIVERS√ÅRIO</h2>
+                        <div class="age-circle">
+                            <span class="age-number">28</span>
+                            <span class="age-text">ANOS</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Carrossel de Imagens -->
-                <div class="carousel-container">
-                    <div class="carousel">
+                <!-- Carrossel de Imagens Moderno -->
+                <div class="carousel-modern">
+                    <div class="carousel-wrapper">
                         <div class="carousel-slides">
                             <div class="slide active">
-                                <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image" onclick="openModal(0)">
+                                <div class="image-frame">
+                                    <img src="images/kayane1.jpeg" alt="Kayane - Foto 1" class="carousel-image" onclick="openModal(0)">
+                                </div>
                             </div>
                             <div class="slide">
-                                <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image" onclick="openModal(1)">
+                                <div class="image-frame">
+                                    <img src="images/kayane2.jpeg" alt="Kayane - Foto 2" class="carousel-image" onclick="openModal(1)">
+                                </div>
                             </div>
                             <div class="slide">
-                                <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image" onclick="openModal(2)">
+                                <div class="image-frame">
+                                    <img src="images/kayane3.jpeg" alt="Kayane - Foto 3" class="carousel-image" onclick="openModal(2)">
+                                </div>
                             </div>
                             <div class="slide">
-                                <img src="images/kayane4.jpeg" alt="Kayane - Foto 4" class="carousel-image" onclick="openModal(3)">
+                                <div class="image-frame">
+                                    <img src="images/kayane4.jpeg" alt="Kayane - Foto 4" class="carousel-image" onclick="openModal(3)">
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- NavegaÁ„o do Carrossel -->
-                        <button class="carousel-btn prev-btn" onclick="changeSlide(-1)"></button>
-                        <button class="carousel-btn next-btn" onclick="changeSlide(1)"></button>
+                        <!-- Navega√ß√£o Moderna -->
+                        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
+                            <span></span>
+                        </button>
+                        <button class="nav-btn next-btn" onclick="changeSlide(1)">
+                            <span></span>
+                        </button>
                         
-                        <!-- Indicadores -->
-                        <div class="carousel-indicators">
-                            <span class="indicator active" onclick="currentSlide(1)"></span>
-                            <span class="indicator" onclick="currentSlide(2)"></span>
-                            <span class="indicator" onclick="currentSlide(3)"></span>
-                            <span class="indicator" onclick="currentSlide(4)"></span>
+                        <!-- Indicadores Modernos -->
+                        <div class="modern-indicators">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Modal para exibir imagem em tamanho completo -->
-                <div id="imageModal" class="modal" onclick="closeModal()">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="modalImage">
-                    <div class="modal-nav">
-                        <button class="modal-btn prev" onclick="event.stopPropagation(); modalPrevious()">&lt;</button>
-                        <button class="modal-btn next" onclick="event.stopPropagation(); modalNext()">&gt;</button>
-                    </div>
+                <!-- Nome da Aniversariante -->
+                <div class="name-modern">
+                    <h3 class="name-title">KAYANE MULLER</h3>
+                    <div class="name-decoration"></div>
                 </div>
 
-                <div class="name-section">
-                    <h3 class="name">KAYANE MULLER</h3>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="details-section">
-                    <div class="detail-item">
-                        <span class="icon"></span>
-                        <div class="detail-text">
-                            <strong><a href="https://www.google.com/search?client=firefox-b-d&channel=entpr&q=balburdia+&lqi=CgliYWxidXJkaWFI5YCH2M67gIAIWhUQABgAIgliYWxidXJkaWEqBAgCEACSAQxjb2NrdGFpbF9iYXKqAUAKDS9nLzExd21wajNqMzUQATIeEAEiGvkOBADyYWyv-T9Wky1XTDVsmcx2OxVOKgTSMg0QAiIJYmFsYnVyZGlh#rlimm=15046616327529831212" target="_blank" style="color: #ff6b35; text-decoration: none;">Balburdia Cervejaria</a></strong>
-                            <p>FlorianÛpolis, SC</p>
+                <!-- Informa√ß√µes do Evento -->
+                <div class="event-info">
+                    <div class="info-card location">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <h4><a href="https://www.google.com/search?client=firefox-b-d&channel=entpr&q=balburdia+&lqi=CgliYWxidXJkaWFI5YCH2M67gIAIWhUQABgAIgliYWxidXJkaWEqBAgCEACSAQxjb2NrdGFpbF9iYXKqAUAKDS9nLzExd21wajNqMzUQATIeEAEiGvkOBADyYWyv-T9Wky1XTDVsmcx2OxVOKgTSMg0QAiIJYmFsYnVyZGlh#rlimm=15046616327529831212" target="_blank">Balburdia Cervejaria</a></h4>
+                            <p>Florian√≥polis, SC</p>
                         </div>
                     </div>
 
-                    <div class="detail-item">
-                        <span class="icon"></span>
-                        <div class="detail-text">
-                            <strong>19:00</strong>
-                            <p>04/11/2025</p>
+                    <div class="info-card datetime">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <h4>19:00</h4>
+                            <p>04 de Novembro, 2025</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="cta-section">
-                    <div class="rsvp-form">
-                        <input type="text" id="fullName" placeholder="Digite seu nome completo" class="name-input">
-                        <button type="button" id="confirmBtn" class="confirm-btn">EU VOU!! </button>
+                <!-- Confirma√ß√£o de Presen√ßa -->
+                <div class="rsvp-modern">
+                    <div class="rsvp-header">
+                        <h4>Confirme sua Presen√ßa! </h4>
+                    </div>
+                    <div class="rsvp-form-modern">
+                        <input type="text" id="fullName" placeholder="Digite seu nome completo" class="name-input-modern">
+                        <button type="button" id="confirmBtn" class="confirm-btn-modern">
+                            <span>EU VOU!</span>
+                            <span class="btn-emoji"></span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- SeÁ„o de Mensagem -->
-                <div class="message-section">
-                    <h4 class="message-title">Escreva uma mensagem para Kayane </h4>
-                    <div class="message-form">
-                        <textarea id="messageText" placeholder="Digite sua mensagem carinhosa para a Kayane..." rows="4"></textarea>
-                        <div class="form-buttons">
-                            <button type="button" id="clearBtn" class="clear-btn">Limpar</button>
-                            <button type="button" id="sendBtn" class="send-btn">Enviar</button>
+                <!-- Mensagens -->
+                <div class="message-modern">
+                    <div class="message-header">
+                        <h4>Deixe uma Mensagem Carinhosa </h4>
+                    </div>
+                    <div class="message-form-modern">
+                        <textarea id="messageText" placeholder="Escreva algo especial para a Kayane..." rows="3"></textarea>
+                        <div class="message-buttons">
+                            <button type="button" id="clearBtn" class="btn-secondary">Limpar</button>
+                            <button type="button" id="sendBtn" class="btn-primary">
+                                <span>Enviar</span>
+                                <span></span>
+                            </button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
 
-        <footer class="footer">
-            <div class="beer-icons">
-                      
+        <!-- Modal para Imagens -->
+        <div id="imageModal" class="modal-modern" onclick="closeModal()">
+            <span class="modal-close">&times;</span>
+            <img class="modal-image" id="modalImage">
+            <div class="modal-navigation">
+                <button class="modal-nav-btn prev" onclick="event.stopPropagation(); modalPrevious()"></button>
+                <button class="modal-nav-btn next" onclick="event.stopPropagation(); modalNext()"></button>
+            </div>
+        </div>
+
+        <!-- Footer Divertido -->
+        <footer class="modern-footer">
+            <div class="footer-content">
+                     
             </div>
         </footer>
     </div>
 
     <script>
-        // Vari·veis do carrossel
+        // Vari√°veis globais
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
-        const indicators = document.querySelectorAll('.indicator');
+        const dots = document.querySelectorAll('.dot');
         const images = ['images/kayane1.jpeg', 'images/kayane2.jpeg', 'images/kayane3.jpeg', 'images/kayane4.jpeg'];
         let currentModalIndex = 0;
 
-        // FunÁ„o para trocar slide
+        // Fun√ß√£o para trocar slide
         function changeSlide(direction) {
             slides[currentSlideIndex].classList.remove('active');
-            indicators[currentSlideIndex].classList.remove('active');
+            dots[currentSlideIndex].classList.remove('active');
             
             currentSlideIndex += direction;
             
@@ -143,36 +183,34 @@
             }
             
             slides[currentSlideIndex].classList.add('active');
-            indicators[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
         }
 
-        // FunÁ„o para ir para slide especÌfico
+        // Fun√ß√£o para slide espec√≠fico
         function currentSlide(n) {
             slides[currentSlideIndex].classList.remove('active');
-            indicators[currentSlideIndex].classList.remove('active');
+            dots[currentSlideIndex].classList.remove('active');
             
             currentSlideIndex = n - 1;
             
             slides[currentSlideIndex].classList.add('active');
-            indicators[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
         }
 
-        // FunÁ„o para abrir modal
+        // Modal functions
         function openModal(imageIndex) {
             currentModalIndex = imageIndex;
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
             modalImg.src = images[imageIndex];
         }
 
-        // FunÁ„o para fechar modal
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
 
-        // NavegaÁ„o no modal
         function modalPrevious() {
             currentModalIndex = currentModalIndex > 0 ? currentModalIndex - 1 : images.length - 1;
             document.getElementById('modalImage').src = images[currentModalIndex];
@@ -183,17 +221,16 @@
             document.getElementById('modalImage').src = images[currentModalIndex];
         }
 
-        // Auto-play do carrossel
+        // Auto-play
         setInterval(() => {
             changeSlide(1);
         }, 5000);
 
-        // Bot„o Limpar mensagem
+        // Event listeners
         document.getElementById('clearBtn').addEventListener('click', function() {
             document.getElementById('messageText').value = '';
         });
 
-        // Bot„o EU VOU!! - ConfirmaÁ„o de presenÁa
         document.getElementById('confirmBtn').addEventListener('click', function() {
             const fullName = document.getElementById('fullName').value.trim();
             
@@ -208,10 +245,9 @@
             
             window.open(whatsappURL, '_blank');
             document.getElementById('fullName').value = '';
-            alert('Obrigada por confirmar presenÁa! ');
+            alert('Obrigada por confirmar presen√ßa! ');
         });
 
-        // Bot„o Enviar mensagem
         document.getElementById('sendBtn').addEventListener('click', function() {
             const message = document.getElementById('messageText').value.trim();
             
@@ -221,11 +257,24 @@
             }
 
             const whatsappNumber = '5548984555494';
-            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Anivers·rio 28 anos): ' + message);
+            const encodedMessage = encodeURIComponent('Mensagem para a Kayane (Anivers√°rio 28 anos): ' + message);
             const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
             
             window.open(whatsappURL, '_blank');
         });
+
+        // Particles animation
+        function createParticles() {
+            const particles = document.querySelectorAll('.particles');
+            particles.forEach(particle => {
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            });
+        }
+
+        // Initialize
+        createParticles();
     </script>
 </body>
 </html>
